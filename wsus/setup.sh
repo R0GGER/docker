@@ -16,8 +16,7 @@ trap 'ctrlc' INT
 
 while true; do
     # update wsusoffline version
-    rm -rf /wsusoffline/.svn
-    svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/
+    svn up wsusoffline/
     
     # download ms updates
     cd /wsusoffline/sh && ./DownloadUpdates.sh "$SYSTEM" "$LANGUAGE" "$PARAMS"
