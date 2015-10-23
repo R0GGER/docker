@@ -15,8 +15,15 @@ ctrlc()
 trap 'ctrlc' INT
 
 while true; do
+    # update wsusoffline version
+    rm -rf /wsusoffline/.svn
+    svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/
+    
+    # download ms updates
     cd /wsusoffline/sh && ./DownloadUpdates.sh "$SYSTEM" "$LANGUAGE" "$PARAMS"
-	cd /wsusoffline/sh && ./DownloadUpdates.sh "$OFFICE" "$LANGUAGE" 
+    cd /wsusoffline/sh && ./DownloadUpdates.sh "$OFFICE" "$LANGUAGE" 
+    
+    # goto sleep
     echo "Sleeping for $SLEEP before next download."
     sleep "$SLEEP"
 done
