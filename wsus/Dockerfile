@@ -14,10 +14,9 @@ RUN apt-get update && apt-get install -y \
         subversion
 
 # Adding files and scripts
-ADD init/ /etc/my_init.d/
 ADD setup.sh /setup.sh
 
-RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline \
+RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ \
         && chmod +x /wsusoffline/sh/DownloadUpdates.sh
 
 # Mapping
