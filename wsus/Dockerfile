@@ -1,7 +1,5 @@
 FROM debian:jessie
-MAINTAINER R0GGER 
-
-# CREDITS: Paul Liljenberg <liljenberg.paul@gmail.com>
+MAINTAINER R0GGER
 
 # install
 RUN apt-get update && apt-get install -y \
