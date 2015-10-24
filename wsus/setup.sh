@@ -1,5 +1,4 @@
 #!/bin/bash
-# CREDITS: Paul Liljenberg <liljenberg.paul@gmail.com>
 
 SYSTEM=${SYSTEM:-"all-x64"}
 OFFICE=${OFFICE:-"ofc"}
