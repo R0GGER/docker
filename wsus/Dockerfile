@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
         subversion
 
 # Adding files and scripts
-ADD setup.sh /setup.sh
+ADD setup.sh /setup.sh \
 
 RUN wget -O /wsusoffline.zip http://download.wsusoffline.net/wsusoffline102.zip \
 RUN unzip /wsusoffline.zip \
