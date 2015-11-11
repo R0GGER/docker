@@ -14,15 +14,9 @@ ctrlc()
 trap 'ctrlc' INT
 
 while true; do
-    # download
-    RUN wget -O /wsusoffline.zip http://download.wsusoffline.net/wsusoffline102.zip
-    RUN unzip /wsusoffline.zip \
-        && rm /wsusoffline.zip \
-        && chmod +x /wsusoffline/sh/DownloadUpdates.sh
-
     # update wsusoffline version
-	cd /wsusoffline && rm -rf /wsusoffline/.svn
-	svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/
+    cd /wsusoffline && rm -rf /wsusoffline/.svn
+    svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/
     
     # download ms updates
     cd /wsusoffline/sh && ./DownloadUpdates.sh "$SYSTEM" "$LANGUAGE" "$PARAMS"
