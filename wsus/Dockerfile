@@ -11,16 +11,14 @@ RUN apt-get update && apt-get install -y \
         genisoimage \
         subversion
 
-# Adding files and scripts
-ADD setup.sh /setup.sh \
 
-RUN wget -O /wsusoffline.zip http://download.wsusoffline.net/wsusoffline102.zip \
+RUN wget -O /wsusoffline.zip http://download.wsusoffline.net/wsusoffline102.zip
 RUN unzip /wsusoffline.zip \
-        && rm /wsusoffline.zip \
-
 RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ \
+        && rm /wsusoffline.zip \
         && chmod +x /wsusoffline/sh/DownloadUpdates.sh
 
 # Mapping
+ADD setup.sh /setup.sh
 VOLUME ["/wsusoffline"]
 ENTRYPOINT ["/setup.sh"]
