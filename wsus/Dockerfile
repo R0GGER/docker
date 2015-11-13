@@ -14,10 +14,11 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget -O /wsusoffline.zip http://download.wsusoffline.net/wsusoffline102.zip
 RUN unzip /wsusoffline.zip \
-RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ \
-&& chmod +x /wsusoffline/sh/DownloadUpdates.sh \
-&& rm /wsusoffline.zip
+    && chmod +x /wsusoffline/sh/DownloadUpdates.sh \
+    && rm /wsusoffline.zip
 
+RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ 
+    
 # Mapping
 VOLUME ["/wsusoffline"]
 ADD setup.sh /setup.sh
