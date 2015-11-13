@@ -1,24 +1,24 @@
 FROM debian:jessie
 MAINTAINER R0GGER
 
-# install
-RUN apt-get update && apt-get install -y \
-        unzip \
-        md5deep \
-        wget \
-        xmlstarlet \
-        cabextract \
-        genisoimage \
-        subversion
+ENV APTLIST="unzip md5deep wget xmlstarlet cabextract genisoimage subversion"
 
+# install
+RUN apt-get update -q && \
+apt-get install \
+$APTLIST -qy && \
+
+# cleanup 
+apt-get clean -y && \
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget -O /wsusoffline.zip http://download.wsusoffline.net/wsusoffline102.zip
 RUN unzip /wsusoffline.zip \
 RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ \
-        && rm /wsusoffline.zip \
-        && chmod +x /wsusoffline/sh/DownloadUpdates.sh
+RUN chmod +x /wsusoffline/sh/DownloadUpdates.sh \
+        && rm /wsusoffline.zip
 
 # Mapping
-ADD setup.sh /setup.sh
 VOLUME ["/wsusoffline"]
+ADD setup.sh /setup.sh
 ENTRYPOINT ["/setup.sh"]
