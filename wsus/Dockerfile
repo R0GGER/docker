@@ -15,7 +15,7 @@ RUN unzip /wsusoffline.zip \
     && chmod +x /wsusoffline/sh/DownloadUpdates.sh \
     && rm /wsusoffline.zip
 
-RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ 
+#RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ 
     
 # Mapping
 VOLUME ["/wsusoffline"]
