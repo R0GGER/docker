@@ -5,12 +5,10 @@ ENV APTLIST="unzip md5deep wget xmlstarlet cabextract genisoimage subversion"
 
 # install
 RUN apt-get update -q && \
-apt-get install \
-$APTLIST -qy && \
-
-# cleanup 
-apt-get clean -y && \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    apt-get install \
+    $APTLIST -qy && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget -O /wsusoffline.zip http://download.wsusoffline.net/wsusoffline102.zip
 RUN unzip /wsusoffline.zip \
