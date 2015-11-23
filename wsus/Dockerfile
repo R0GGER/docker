@@ -18,6 +18,6 @@ RUN unzip /wsusoffline.zip \
 #RUN svn checkout https://svn.wsusoffline.net/svn/wsusoffline/trunk/ wsusoffline/ 
     
 # Mapping
-VOLUME ["/wsusoffline"]
+VOLUME ["/wsusoffline/client"]
 ADD setup.sh /setup.sh
 ENTRYPOINT ["/setup.sh"]
