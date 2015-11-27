@@ -1,12 +1,6 @@
-![http://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
-
-The [LinuxServer.io](https://www.linuxserver.io/) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](https://forum.linuxserver.io/index.php) or for real-time support our [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
-
-# linuxserver/nzbmegasearch
-
 Aggregate automatically NZB search results. Easy. Quick. Clean.
 
-NZBmegasearcH collects all your (not only) newznab-based accounts to one place. It is your meta-search engine and your SB, CP unique NZB provider. [Nzbmegasearch](http://pillone.github.io/usntssearch/)
+NZBmegasearcH collects all your (not only) newznab-based accounts to one place. It is your meta-search engine and your SB, CP unique NZB provider. [Nzbmegasearch](https://github.com/Mirabis/usntssearch)
 
 ## Usage
 
@@ -40,10 +34,7 @@ Configure via the webserver at http://ip:5000
 * Upgrade to the latest version simply `docker restart nzbmegasearch`.
 * To monitor the logs of the container in realtime `docker logs -f nzbmegasearch`.
 
+## ALL CREDITS GO TO: linuxserver/nzbmegasearch
 
-
-## Versions
-
-+ **11.11.2015:** Initial Release. 
 
 
