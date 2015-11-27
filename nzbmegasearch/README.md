@@ -34,7 +34,7 @@ Configure via the webserver at http://ip:5000
 * Upgrade to the latest version simply `docker restart nzbmegasearch`.
 * To monitor the logs of the container in realtime `docker logs -f nzbmegasearch`.
 
-### ALL CREDITS GO TO: linuxserver/nzbmegasearch
+*** ALL CREDITS GO TO: linuxserver/nzbmegasearch ***
 
 
 
