@@ -29,7 +29,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 Configure via the webserver at http://ip:5000
 
 
-## Updates
+### Updates
 
 * Upgrade to the latest version simply `docker restart nzbmegasearch`.
 * To monitor the logs of the container in realtime `docker logs -f nzbmegasearch`.
