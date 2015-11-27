@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec /sbin/setuser abc python /config/nzbmega/NZBmegasearch/mega2.py
