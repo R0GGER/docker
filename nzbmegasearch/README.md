@@ -1,7 +1,6 @@
 ### NZB Megasearch
-
-Aggregate automatically NZB search results. Easy. Quick. Clean.   
-**Mirabis' version of [Nzbmegasearch](https://github.com/Mirabis/usntssearch)**
+**Mirabis' version of [Nzbmegasearch](https://github.com/Mirabis/usntssearch)**   
+Aggregate automatically NZB search results. Easy. Quick. Clean.
 
 NZBmegasearcH collects all your (not only) newznab-based accounts to one place. It is your meta-search engine and your SB, CP unique NZB provider. 
 
