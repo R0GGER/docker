@@ -1,14 +1,16 @@
-## NZB Megasearch
+### NZB Megasearch
 
 Aggregate automatically NZB search results. Easy. Quick. Clean.
+**Mirabis' version of [Nzbmegasearch](https://github.com/Mirabis/usntssearch)**
 
-NZBmegasearcH collects all your (not only) newznab-based accounts to one place. It is your meta-search engine and your SB, CP unique NZB provider. Mirabis version of [Nzbmegasearch](https://github.com/Mirabis/usntssearch).
+NZBmegasearcH collects all your (not only) newznab-based accounts to one place. It is your meta-search engine and your SB, CP unique NZB provider. 
 
-## Usage
+### Usage
 
 ```
 docker create --name=nzbmegasearch -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 5000:5000 linuxserver/nzbmegasearch
 ```
+
 
 **Parameters**
 
@@ -26,17 +28,17 @@ It is based on phusion-baseimage with ssh removed, for shell access whilst the c
 
 Part of what makes our containers work so well is by allowing you to specify your own `PUID` and `PGID`. This avoids nasty permissions errors with relation to data volumes (`-v` flags). When an application is installed on the host OS it is normally added to the common group called users, Docker apps due to the nature of the technology can't be added to this group. So we added this feature to let you easily choose when running your containers.
 
-## Setting up the application 
+### Setting up the application 
 
 Configure via the webserver at http://ip:5000
 
 
-## Updates
+### Updates
 
 * Upgrade to the latest version simply `docker restart nzbmegasearch`.
 * To monitor the logs of the container in realtime `docker logs -f nzbmegasearch`.
 
-***ALL CREDITS GO TO: linuxserver/nzbmegasearch***
+***CREDITS: linuxserver/nzbmegasearch***
 
 
 
