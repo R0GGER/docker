@@ -7,7 +7,7 @@ NZBmegasearcH collects all your (not only) newznab-based accounts to one place. 
 ### Usage
 
 ```
-docker create --name=nzbmegasearch -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 5000:5000 linuxserver/nzbmegasearch
+docker create --name=nzbmegasearch -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 5000:5000 r0gger/nzbmegasearch
 ```
 
 
