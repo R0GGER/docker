@@ -12,16 +12,16 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && wget -O /usr/bin/jsawk https://raw.githubusercontent.com/micha/jsawk/master/jsawk \
     && chmod +x /usr/bin/jsawk \
-    && useradd -M -s /bin/false --uid 1000 teamspeak3 \
+    #&& useradd -M -s /bin/false --uid 1000 teamspeak3 \
     #&& mkdir /data \
-    && chown teamspeak3:teamspeak3 /data
-    && chmod -v +x /data
+    #&& chown teamspeak3:teamspeak3 /data \
+    #&& chmod -v +x /data
     
 ADD start-teamspeak3.sh /start-teamspeak3
 
 EXPOSE 9987/udp 10011 30033
 
-USER teamspeak3
+#USER teamspeak3
 WORKDIR /data
 CMD ["/start-teamspeak3"]
 
