@@ -1,0 +1,19 @@
+#!/bin/bash
+set -eo pipefail
+trap "exit 0" 2 15
+
+echo "**** Starting sickgear (http://sickgear.github.io/) container. Enjoy! ****"
+[ -n "$OPEN_FILE_LIMIT" ] &&\
+  ulimit -n $OPEN_FILE_LIMIT
+
+t2 /templates
+
+echo "--> Checking sickgear user ..."
+if ! id sickgear >/dev/null 2>&1; then
+  echo "--> Creating sickgear user and group ..."
+  addgroup -g ${SICKGEAR_GID} sickgear || true
+  adduser -s /sbin/nologin -D -H -G sickgear -u ${SICKGEAR_UID} sickgear
+fi
+
+exec $*
+exit 0
