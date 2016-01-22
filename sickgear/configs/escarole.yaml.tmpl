@@ -1,0 +1,5 @@
+{{ path "/" }}---
+  name: sickgear
+  directory: {{ def .Env.SB_HOME "/sickgear" }}
+  command: supervisorctl restart sickgear
+  git: true
