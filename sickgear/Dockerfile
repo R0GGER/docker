@@ -46,4 +46,4 @@ RUN chmod a+rx /usr/local/bin/* \
         unrar \
         unzip \
     && rm -rf /t2.tgz /es.tgz \
-    && git clone git://github.com/SickGear/SickGear.git /sickgear
+    && git clone https://github.com/SickGear/SickGear.git /SickGear
