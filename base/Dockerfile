@@ -8,7 +8,6 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     TERM="xterm"
 
 RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
-	add-apt-repository ppa:fkrull/deadsnakes-python2.7 && \
     apt-get -q update && \
     apt-get install -qy locales && \
     echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
@@ -18,6 +17,8 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup &&\
     echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache && \
 \
+	add-apt-repository ppa:fkrull/deadsnakes-python2.7 && \
+	apt-get -q update && \
 	apt-get -qy --force-yes dist-upgrade && \
     	apt-get install -qy --force-yes \
         apt-transport-https \
