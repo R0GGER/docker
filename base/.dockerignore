@@ -2,9 +2,6 @@
 .git
 .gitignore
 
-# Local config files
-.editorconfig
-
 #build files
 build.sh
 buildCache.sh
