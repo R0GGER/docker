@@ -19,7 +19,7 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache && \
 \
 	apt-get -qy --force-yes dist-upgrade && \
-    apt-get install -qy --force-yes \
+    	apt-get install -qy --force-yes \
         apt-transport-https \
         bzip2 \
         ca-certificates curl \
@@ -42,30 +42,30 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
 		python-lxml \
 		python-pip \
 		python2.7-dev \
-        rsync rsyslog \
-        software-properties-common ssl-cert sudo supervisor \
-        tar telnet tmux traceroute tree \
-        wget whois \
-        unrar unzip \
-        vim \
-        xz-utils \
-        zsh && \
-
+        	rsync rsyslog \
+        	software-properties-common ssl-cert sudo supervisor \
+        	tar telnet tmux traceroute tree \
+        	wget whois \
+        	unrar unzip \
+        	vim \
+        	xz-utils \
+        	zsh && \
+\        	
 		curl -o /tmp/requests.tar.gz  -L https://github.com/kennethreitz/requests/tarball/master && \
 		mkdir -p /tmp/request_source && \
 		tar xvf /tmp/requests.tar.gz -C /tmp/request_source --strip-components=1 && \
 		cd /tmp/request_source && \
 		python setup.py install && \
-		
+\		
 		curl -o /tmp/urllib3.tar.gz -L https://github.com/shazow/urllib3/tarball/master  && \
 		mkdir -p /tmp/urllib3_source && \
 		tar xvf /tmp/urllib3.tar.gz -C /tmp/urllib3_source --strip-components=1 && \
 		cd /tmp/urllib3_source && \
 		python setup.py install && \
-
+\
 		pip install pip-review && \
 		pip install -U pip pyopenssl ndg-httpsclient virtualenv && \
-		
+\		
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
