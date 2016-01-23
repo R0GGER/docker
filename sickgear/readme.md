@@ -9,4 +9,4 @@ docker run --restart=always -d -h *your_host_name* -v /*your_config_location*:/c
 
 
 EDIT:
-- Runs latest Python 2.7.11 version.
+- Image runs latest Python 2.7.11 version.
