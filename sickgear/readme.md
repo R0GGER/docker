@@ -8,4 +8,5 @@ Why Sickgear? More info here: https://github.com/SickGear/SickGear/wiki/History
 docker run --restart=always -d -h *your_host_name* -v /*your_config_location*:/config  -v /*your_videos_location*:/data -p 8081:8081 sickgear
 
 
-Runs latest Python 2.7.11 version.
+EDIT:
+- Runs latest Python 2.7.11 version.
