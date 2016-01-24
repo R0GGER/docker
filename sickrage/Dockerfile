@@ -1,11 +1,11 @@
 FROM r0gger/base:latest
 MAINTAINER r0gger
 
-ENV SICKGEAR_VERSION="master"
+ENV SICKRAGE_VERSION="master"
 
 RUN apt-get -q update && \
     apt-get install -qy --force-yes python-cheetah python-openssl && \
-    git clone https://github.com/SickRage/SickRage.git /SickRage/ && \    
+    git clone https://github.com/SickRage/SickRage.git /SickRage && \    
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
