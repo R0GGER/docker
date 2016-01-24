@@ -42,7 +42,7 @@ else
 fi
 ln -sf /config/config.ini /SickRage/config.ini
 ln -sf /config/sickbeard.db* /SickRage/
-ln -sf /config/cache /SickRage/cache
+#ln -sf /config/cache /SickRage/cache
 #ln -sf /config/autoProcessTV.cfg SickRage/autoprocesstv/autoProcessTV.cfg
 
 /usr/bin/python SickBeard.py
