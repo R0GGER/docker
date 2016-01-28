@@ -1,0 +1,21 @@
+!/bin/bash
+
+die () {
+    echo >&2 "$@"
+    exit 1
+}
+
+[ "$#" -eq 1 ] || die "Oops, enter your IP... [scriptname xxx.xxx.xxx.xxx]"
+
+echo "Configure: Docker Remote API"
+echo 'DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"' >> /etc/default/docker
+
+service docker restart
+
+echo "Configure: IP Tables"
+
+iptables -A INPUT -p tcp --dport 2375 -s $1 -j ACCEPT
+iptables -A INPUT -p tcp --dport 2375 -j DROP
+
+iptables-save
+iptables-save > /etc/iptables.rules
