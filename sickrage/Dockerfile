@@ -1,24 +1,33 @@
-FROM r0gger/base:latest
-MAINTAINER r0gger
+FROM linuxserver/baseimage.python
 
-ENV SICKRAGE_VERSION="master"
+MAINTAINER R0GGER
 
-RUN apt-get -q update && \
-    apt-get install -qy --force-yes python-cheetah python-openssl && \
-    git clone https://github.com/SickRage/SickRage.git /SickRage && \
-    apt-get -y autoremove && \
-    apt-get -y clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf /tmp/*
+# set python to use utf-8 rather than ascii
+ENV PYTHONIOENCODING="UTF-8"
+ENV SICKRAGEVERSION="https://github.com/SickRage/SickRage/archive/v4.2.0.5.zip"
 
-VOLUME ["/config", "/data"]
+# build unrar
+RUN mkdir -p /tmp/unrar && \
+curl -o /tmp/unrarsource.tar.gz -L http://rarlab.com/rar/unrarsrc-5.2.7.tar.gz && \
+tar -xvf /tmp/unrarsource.tar.gz -C /tmp/unrar --strip-components=1 && \
+cd /tmp/unrar && \
+make -f makefile && \
+install -v -m755 unrar /usr/bin && \
+apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ADD ./start.sh /start.sh
-RUN chmod u+x  /start.sh
+RUN wget -O sickrage.zip $SICKRAGEVERSION && \
+	unzip sickrage.zip -d /app && \
+	mv /app/SickRage-* /app/sickrage && \
+	chown -R abc:abc /app /config && \
+	rm -rf sickrage.zip /app/SickRage-4.2.0.5 
 
+# Adding Custom files
+ADD services/ /etc/service/
+RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
+
+# Volumes and Ports
+VOLUME /config /downloads /tv
 EXPOSE 8081
-
-CMD ["/start.sh"]
 
 # build from dockerfile:
 # docker build -t sickrage .
