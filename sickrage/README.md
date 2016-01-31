@@ -5,6 +5,8 @@
 The latest SickRage doesn't accepts queries with 'q=', as a result of this most queries fail and SickRage won't download anything. 
 Stick to this version **4.2.0.5** and all problems are gone!
 
+Don't forget to **!!disable!!** updates in settings > general > Automatically update
+
 ## SickRage
 Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic. [Sickrage](https://github.com/SickRage/SickRage)
 
@@ -35,13 +37,6 @@ Part of what makes our containers work so well is by allowing you to specify you
 ## Setting up the application 
 
 Web interface is at <your ip>:8081 , set paths for downloads, tv-shows to match docker mappings via the webui.
-
-
-## Updates
-
-* Upgrade to the latest version simply `docker restart sickrage`.
-* To monitor the logs of the container in realtime `docker logs -f sickrage`.
-
 
 ## Versions
 + **1-02-2016:** 4.2.0.5 to solve search issues.
