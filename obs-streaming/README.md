@@ -15,9 +15,7 @@ How to user
 
 3. In Safari, VLC or any HLS compatible browser / player, open
    `http://localhost:8080/hls/stream_name.m3u8`. Note that the first time,
-   it might take a few (10-15) seconds before the stream works. This is because
-   when you start streaming to the server, it needs to generate the first
-   segments and the related playlists.
+   it might take a few (10-15) seconds before the stream works. 
 
 
 Links
