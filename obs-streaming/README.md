@@ -13,7 +13,7 @@ How to user
 2. Stream your live content to `rtmp://localhost:1935/encoder/stream_name` where
    `stream_name` is the name of your stream.
 
-3. In Safari, VLC or any HLS compatible browser / player, open
+3. In Chrome, VLC or any HLS compatible browser / player, open
    `http://localhost:8080/hls/stream_name.m3u8`. Note that the first time,
    it might take a few (10-15) seconds before the stream works. 
 
