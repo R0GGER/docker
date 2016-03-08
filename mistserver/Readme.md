@@ -16,10 +16,10 @@ Configure
 Setup a RTMP stream
 -----------
 
-1. Go to Streams and click 'New stream'.   
+1. Go to ***Streams*** and click ***New stream***.   
 2. Stream name: obs 
 3. Source: `push://` or `push://ip-address`   
-4. Now go to Open Broadcaster Software and enter to `FMS URL: rtmp://mydomain.tld:1935/live/` and `Play Path: obs`.   
+4. Now go to Open Broadcaster Software and enter to ***FMS URL:*** `rtmp://mydomain.tld:1935/live/` and ***Play Path:*** `obs`.   
 
 Embed within website
 -----------
