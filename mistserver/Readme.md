@@ -11,22 +11,17 @@ Configure
 
 2. Run container: `docker run -i -t -p 1935:1935 -p 4242:4242 -p 554:554 -p 8080:8080 -v /my-folder:/data -v /my-folder/video:/data/video --name mistserver mistserver:latest /sbin/my_init`
 
-3. Login to http://mydomain.tld:4242 and enter a username/password.
-
-4. Click on "Enable protocols".
-
+3. Login to http://mydomain.tld:4242 and enter a username/password.   
+4. Click on "Enable protocols".   
 5. Enter a Human readable name and set a thick to 'Force JSON file save'.
 
 Setup a RTMP stream
 -----------
 
-1. Go to Streams and click 'New stream'.
-
-2. Stream name: obs
-
-3. Source: `push://` or `push://ip-address`
-
-4. Now go to Open Broadcaster Software and enter to `FMS URL: rtmp://mydomain.tld:1935/live/` and `Play Path: obs`.
+1. Go to Streams and click 'New stream'.   
+2. Stream name: obs 
+3. Source: `push://` or `push://ip-address`   
+4. Now go to Open Broadcaster Software and enter to `FMS URL: rtmp://mydomain.tld:1935/live/` and `Play Path: obs`.   
 
 Embed within website
 -----------
@@ -47,3 +42,7 @@ var player = videojs('autoplay');
 player.play();
 </script>
 ```
+Links
+-----------
+Website: http://mistserver.org   
+Github: https://github.com/DDVTECH/mistserver
