@@ -2,7 +2,7 @@ MistServer (Open Source)
 =====================
 MistServer is a streaming media server that works well in any streaming environment even a Raspberry Pi! It bridges the gap between dedicated media servers and web servers, performing the best of both worlds when it comes to media streaming delivery.
 
-This Dockerfile installs MistServer for HLS live streaming with Open Broadcaster Software (OBS), FFsplit or Xplit.
+This Dockerfile installs MistServer for HLS live streaming which works great with Open Broadcaster Software (OBS), FFsplit or Xplit!
 
 Configure
 -----------
