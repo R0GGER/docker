@@ -35,7 +35,7 @@ Configure
 2. Run container: `docker run -i -t -p 1935:1935 -p 4242:4242 -p 554:554 -p 8080:8080 -v /my-folder:/data -v /my-folder/video:/data/video --name mistserver mistserver:latest /sbin/my_init`   
 3. Login to http://mydomain.tld:4242 and enter a username/password.   
 4. Click on "Enable protocols".
-5. Enter a Human readable name and set a thick to 'Force JSON file save'.   
+5. Enter a "Human readable name" and set a thick to "Force JSON file save".   
 
 Setup a RTMP stream
 -----------
