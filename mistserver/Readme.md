@@ -67,5 +67,5 @@ player.play();
 Links
 -----------
 Website: http://mistserver.org   
-Github: https://github.com/DDVTECH/mistserver
+Github: https://github.com/DDVTECH/mistserver   
 Video.js HLS plugin: https://github.com/videojs/videojs-contrib-hls/releases
