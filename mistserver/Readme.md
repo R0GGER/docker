@@ -4,6 +4,30 @@ MistServer is a streaming media server that works well in any streaming environm
 
 This Dockerfile installs MistServer for HLS live streaming which works great with Open Broadcaster Software (OBS), FFsplit or Xsplit!
 
+**What makes this docker build better as the original one from DDTECH/MistServer?**   
+Because on `docker stop` it will gracefully shutdown your processes. It prevents any data corruption and all config-files will be saved before shutting down.
+
+Usage
+-----------
+```
+docker create --name=mistserver \   
+-v /etc/localtime:/etc/localtime:ro \   
+-v <path to config>:/data \   
+-v <path to video>:/data/video \   
+-p 4242:4242 -p 1935:1935 \   
+-p 554:554 -p 8080:8080 \   
+r0gger/mistserver   
+```
+    
+**Parameters**    
+`-p 4242` - Web UI  
+`-p 1935` - RTMP  
+`-p 554` - RTSP   
+`-p 8080` - HTTP / HLS   
+`-v /etc/localhost` for timesync - *optional*   
+`-v /data` - config and log files  
+`-v /data/video` - media files - *optional*   
+
 Configure
 -----------
 
@@ -44,3 +68,4 @@ Links
 -----------
 Website: http://mistserver.org   
 Github: https://github.com/DDVTECH/mistserver
+Video.js HLS plugin: https://github.com/videojs/videojs-contrib-hls/releases
