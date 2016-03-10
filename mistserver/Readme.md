@@ -4,7 +4,7 @@ MistServer is a streaming media server that works well in any streaming environm
 
 This Dockerfile installs MistServer for HLS live streaming which works great with Open Broadcaster Software (OBS), FFsplit or Xsplit!
 
-**What makes this docker build better as the original one from DDTECH/MistServer?**   
+**What makes this docker build better as the official one from DDTECH/MistServer?**   
 Because on `docker stop` it will gracefully shutdown your processes. It prevents any data corruption and all config-files will be saved before shutting down.
 
 Usage
