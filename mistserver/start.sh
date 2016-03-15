@@ -1,8 +1,3 @@
-#!/bin/sh
+#!/bin/bash
+/sbin/setuser mist MistController -d -c /config/server.conf -L /config/debug.log
 
-#/mist/MistController
-CFG=/data/mistserver.conf
-LOG=/data/mistserver.log
-
-echo "STARTING MISTSERVER...."
-./mist/MistController -d -c $CFG -L $LOG
