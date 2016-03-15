@@ -26,7 +26,7 @@ r0gger/mistserver
 `-p 8080` - HTTP / HLS   
 `-v /etc/localhost` for timesync - *optional*   
 `-v /config` - config and log files  
-`-v /media` - video and audio files - *optional*
+`-v /media` - video and audio files      
 `MISTSERVER=r.mistserver.org/dl/mistserver_64V2.5.3.tar.gz` or `http://releases.mistserver.org/dl/453/*UNIQUE-ID*/mistserver_XXX_PRO.tar.gz` - Just replace this link if you want to install a different version.
 
 Configure
