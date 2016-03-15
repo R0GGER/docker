@@ -3,7 +3,7 @@ MAINTAINER R0GGER
 
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
 ENV PATH /app/mistserver:$PATH
-ENV MISTSERVER=r.mistserver.org/dl/mistserver_64V2.5.3.tar.gz
+ARG MISTSERVER=r.mistserver.org/dl/mistserver_64V2.5.3.tar.gz
 CMD ["/sbin/my_init"]
 
 # add user/files
