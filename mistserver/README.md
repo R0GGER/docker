@@ -27,21 +27,22 @@ r0gger/mistserver
 `-v /etc/localhost` - for timesync - *optional*   
 `-v /config` - config and log files  
 `-v /media` - video and audio files      
-Just replace this link if you want to install a different version;   
-`MISTSERVER=r.mistserver.org/dl/mistserver_64V2.5.3.tar.gz` or    `MISTSERVER=releases.mistserver.org/dl/453/*UNIQUE-ID*/mistserver_XXX_PRO.tar.gz`
 
-Configure
+Build Pro version
 -----------
+`docker build --build-arg MISTSERVER=http://releases.mistserver.org/dl/**/***UNIQUE-ID***/mistserver_***.tar.gz -t mistserver-pro .`
 
+Build Free version
+-----------
 1. Build: `docker build -t mistserver .`   
-2. Run container: `docker run -i -t -p 1935:1935 -p 4242:4242 -p 554:554 -p 8080:8080 -v /my-folder:/config -v /my-folder/video:/media --name mistserver mistserver:latest /sbin/my_init`   
+2. Run container:    
+`docker run -i -t -p 1935:1935 -p 4242:4242 -p 554:554 -p 8080:8080 -v /my-folder:/config -v /my-folder/video:/media --name mistserver mistserver:latest /sbin/my_init`   
 3. Login to http://mydomain.tld:4242 and enter a username/password.   
 4. Click on "Enable protocols".
 5. Enter a "Human readable name" and set a thick to "Force JSON file save".   
 
 Setup live streaming with RTMP
 -----------
-
 1. Go to **Streams** and click **New stream**.   
 2. Stream name: obs 
 3. Source: `push://` or `push://your-ip-address`   
@@ -53,14 +54,9 @@ Embed within website
 <video id=autoplay width="720" height="360" class="video-js vjs-default-skin vjs-big-play-centered" controls>
   <source src="http://mydomain.tld:8080/hls/stream_name.m3u8" type="application/x-mpegURL">
 </video>
-
-
 <link href="//vjs.zencdn.net/5.7.1/video-js.css" rel="stylesheet">
 <script src="//vjs.zencdn.net/5.7.1/video.js"></script>
-
-<!-- download latest version here: https://github.com/videojs/videojs-contrib-hls/releases -->
 <script src="//videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-hls/dist/videojs.hls.min.js"></script>
-
 <script>
 var player = videojs('autoplay');
 player.play();
