@@ -2,7 +2,7 @@ MistServer
 =====================
 MistServer is a streaming media server that works well in any streaming environment even on a Raspberry Pi! It bridges the gap between dedicated media servers and web servers, performing the best of both worlds when it comes to media streaming delivery.
 
-The opensource version works best with HLS live streaming (gaming) with programs such as Open Broadcaster Software (OBS), FFsplit or Xsplit!
+The opensource version works best with HLS live streaming (gaming) with programs such as Open Broadcaster Software (OBS), FFsplit or Xsplit! If you want more such as VOD, buy a pro-license.
 
 **What makes this docker build better as the official one from DDTECH/MistServer?**   
 Because on `docker stop` it will gracefully shutdown your processes. It prevents any data corruption and all config-files will be saved before shutting down.
@@ -39,7 +39,7 @@ Configure
 4. Click on "Enable protocols".
 5. Enter a "Human readable name" and set a thick to "Force JSON file save".   
 
-Setup Live streaming with RTMP (gaming / cam)
+Setup live streaming with RTMP
 -----------
 
 1. Go to **Streams** and click **New stream**.   
