@@ -1,8 +1,8 @@
-MistServer (Open Source)
+MistServer
 =====================
-MistServer is a streaming media server that works well in any streaming environment even a Raspberry Pi! It bridges the gap between dedicated media servers and web servers, performing the best of both worlds when it comes to media streaming delivery.
+MistServer is a streaming media server that works well in any streaming environment even on a Raspberry Pi! It bridges the gap between dedicated media servers and web servers, performing the best of both worlds when it comes to media streaming delivery.
 
-This Dockerfile installs MistServer for HLS live streaming which works great with Open Broadcaster Software (OBS), FFsplit or Xsplit!
+The opensource version works best with HLS live streaming (gaming) with programs such as Open Broadcaster Software (OBS), FFsplit or Xsplit!
 
 **What makes this docker build better as the official one from DDTECH/MistServer?**   
 Because on `docker stop` it will gracefully shutdown your processes. It prevents any data corruption and all config-files will be saved before shutting down.
@@ -12,8 +12,8 @@ Usage
 ```
 docker create --name=mistserver \   
 -v /etc/localtime:/etc/localtime:ro \   
--v <path to config>:/data \   
--v <path to video>:/data/video \   
+-v <path to config>:/config \   
+-v <path to video>:/media \   
 -p 4242:4242 -p 1935:1935 \   
 -p 554:554 -p 8080:8080 \   
 r0gger/mistserver   
@@ -25,24 +25,25 @@ r0gger/mistserver
 `-p 554` - RTSP   
 `-p 8080` - HTTP / HLS   
 `-v /etc/localhost` for timesync - *optional*   
-`-v /data` - config and log files  
-`-v /data/video` - media files - *optional*   
+`-v /config` - config and log files  
+`-v /media` - video and audio files - *optional*
+`MISTSERVER=r.mistserver.org/dl/mistserver_64V2.5.3.tar.gz` or `http://releases.mistserver.org/dl/453/*UNIQUE-ID*/mistserver_XXX_PRO.tar.gz` - Just replace this link if you want to install a different version.
 
 Configure
 -----------
 
 1. Build: `docker build -t mistserver .`   
-2. Run container: `docker run -i -t -p 1935:1935 -p 4242:4242 -p 554:554 -p 8080:8080 -v /my-folder:/data -v /my-folder/video:/data/video --name mistserver mistserver:latest /sbin/my_init`   
+2. Run container: `docker run -i -t -p 1935:1935 -p 4242:4242 -p 554:554 -p 8080:8080 -v /my-folder:/config -v /my-folder/video:/media --name mistserver mistserver:latest /sbin/my_init`   
 3. Login to http://mydomain.tld:4242 and enter a username/password.   
 4. Click on "Enable protocols".
 5. Enter a "Human readable name" and set a thick to "Force JSON file save".   
 
-Setup a RTMP stream
+Setup Live streaming with RTMP (gaming / cam)
 -----------
 
 1. Go to **Streams** and click **New stream**.   
 2. Stream name: obs 
-3. Source: `push://` or `push://ip-address`   
+3. Source: `push://` or `push://your-ip-address`   
 4. Now go to Open Broadcaster Software and enter to **FMS URL:** `rtmp://mydomain.tld:1935/live/` and **Play Path:** `obs`.   
 
 Embed within website
