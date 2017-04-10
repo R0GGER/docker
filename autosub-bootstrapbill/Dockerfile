@@ -7,7 +7,7 @@ RUN apt-get install -y git nano
 RUN git clone https://github.com/BenjV/autosub-bootstrapbill.git /app/autosub
 RUN pip install cheetah
 
-EXPOSE 8083
+EXPOSE 9960
 WORKDIR /app/autosub
 
 CMD ["python2", "AutoSub.py"]
