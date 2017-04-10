@@ -1,1 +1,12 @@
-```docker run -it -d --name autosub -p 9960:9960 --restart=unless-stopped /path:/app/autosub -v /path/series:/series r0gger/autosub-bootstrapbill```
+More info later.
+
+```
+docker run -d -i -t \
+	--name autosub \
+	-p 9960:9960 \
+	--restart=unless-stopped \
+	-v /etc/localtime:/etc/localtime:ro \
+	-v /path/to/appdata:/app/autosub \
+	-v /path/to/series:/series \
+	r0gger/autosub-bootstrapbill
+```
