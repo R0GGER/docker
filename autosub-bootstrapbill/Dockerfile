@@ -1,4 +1,4 @@
-FROM python:2-slim
+FROM python:2
 MAINTAINER R0GGER
 
 RUN apt-get update 
