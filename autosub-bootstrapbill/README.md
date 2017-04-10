@@ -6,7 +6,6 @@ docker run -d -i -t \
 	-p 9960:9960 \
 	--restart=unless-stopped \
 	-v /etc/localtime:/etc/localtime:ro \
-	-v /path/to/appdata:/app/autosub \
 	-v /path/to/series:/series \
 	r0gger/autosub-bootstrapbill
 ```
