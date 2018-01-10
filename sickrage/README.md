@@ -1,5 +1,5 @@
 # r0gger/sickrage
-
+**DEPRECIATED!**
 **Sickrage v4.2.0.5 from 26 November 2015**
 
 The latest SickRage doesn't accepts queries with 'q=', as a result of this most queries fail and SickRage won't download anything. 
