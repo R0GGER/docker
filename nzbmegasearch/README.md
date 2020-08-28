@@ -1,3 +1,5 @@
+# ! Deprecated !
+
 ### NZB Megasearch
 **Mirabis' version of [NZB Megasearch](https://github.com/Mirabis/usntssearch)**   
 Aggregate automatically NZB search results. Easy. Quick. Clean.
