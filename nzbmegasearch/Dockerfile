@@ -1,4 +1,4 @@
-FROM linuxserver/baseimage.python
+FROM lsiobase/alpine.python
 MAINTAINER ROGGER
 
 # add some files 
